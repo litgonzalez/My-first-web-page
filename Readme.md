@@ -9,6 +9,6 @@ After finalizing the order, it takes you to a page where all the orders are disp
 I made this webpage using the following technologies:
 
 - Django / Python
-- Javascript
+- JavaScript
 - CSS / Bootstrap
 - SQlite
