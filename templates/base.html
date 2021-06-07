@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            header {
+                width:100%; /* Establecemos que el header abarque el 100% del documento */
+                overflow:hidden; /* Eliminamos errores de float */
+                background:#000000;
+                margin-bottom:20px;
+                }
+ 
+            .wrapper {
+                width:90%; /* Establecemos que el ancho sera del 90% */
+                max-width:1000px; /* Aqui le decimos que el ancho máximo sera de 1000px */
+                margin: auto;
+                text-align: center;
+                overflow:hidden; /* Eliminamos errores de float */
+                font-family: 'Montserrat', sans-serif;
+            }
+            
+            header .logo {
+                color:#f2f2f2;
+                margin-top: 15px;
+                margin-left: 40px;
+                font-size: 30px;
+                font-family: 'Orbitron', sans-serif;
+                font-weight:bold;
+                float:left;
+            }
+            
+            header nav {
+                float:right;
+                line-height:100px;
+                margin-right: 40px;
+                margin-top: 15px;
+            }
+            
+            header nav a {
+                display:inline-block;
+                color:#fff;
+                font-family: 'Montserrat', sans-serif;
+                text-decoration:none;
+                padding:10px 20px;
+                line-height:normal;
+                font-size:20px;
+                font-weight: bold;
+                -webkit-transition:all 500ms ease;
+                -o-transition:all 500ms ease;
+                transition:all 500ms ease;
+            }
+            
+            header nav a:hover {
+                background:#d72d2d;
+                border-radius:50px;
+                text-decoration:none;
+                color: white;
+            }
+
+            header nav a:visited {
+                color: white;
+                text-decoration:none;
+            }
+
+            h1 {
+                font-family: 'Montserrat', sans-serif;
+                font-size:20px;
+                }
+
+            body {
+                background-color: #FFF8DC;
+                padding: 0;
+            }
+            
+            html {
+                min-height: 100%;
+                position: relative;
+                    }
+
+            footer {
+                width:100%; /* Establecemos que el header abarque el 100% del documento */
+                overflow:hidden; /* Eliminamos errores de float */
+                background:#000000;
+                line-height: 100px;
+                color: white;
+                position: relative;
+                bottom: 0;
+                }
+
+            .forms {
+                margin-left: 10px;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 20px;
+            }
+
+            .titulos {
+                font-size: 30px;
+                font-family: 'Montserrat', sans-serif;
+                margin-left: 20px;
+                font-weight: bold;
+                font-style: italic;
+            }
+            .titulos2 {
+                font-size: 20px;
+                font-family: 'Montserrat', sans-serif;
+                margin-left: 20px;
+            }
+        </style>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,600;1,200&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-theme.css" media="screen">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/gallery-grid1.css">
+        <!--<link rel="stylesheet" href="{{ STATIC_URL }}css/lightbox.css">-->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Bienvenid@ a 3DHUB</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <div class="logo">
+                    <img src="{{ STATIC_URL }}images/new.png" style="width: 100px;">3DHUB <br>
+                    
+                </div>
+
+                
+                <nav>
+                    <a href="/main/">Inicio</a>
+                    <a href="/main/nuevocliente">Regístrate</a>
+                    <a href="/main/nuevaorden">Compra</a>
+                    <a href="/main/contacto">Contacto</a>
+                </nav>
+            </div>
+        </header>
+        <h2 class="titulos">
+            {% block titulo %} {% endblock %}
+        </h2>
+        <h3 class="titulos2">
+            {% block titulo2 %} {% endblock %}
+        </h3>
+        <div class="col-sm-12 maincontent">
+            <!--CUERPO PRINCIPAL-->
+            {% block contenido %} {% endblock %}
+        </div>
+        <footer>
+			<p style="margin-left: 40px;"> 2021 Copyright | Litxania González </p>
+		</footer>
+    </body>
+</html>

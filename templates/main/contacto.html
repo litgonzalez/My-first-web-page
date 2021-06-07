@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block titulo %} Formulario de contacto {% endblock %} 
+{% block titulo2 %} A continuación nos puedes dejar tus datos para poder responder todas tus consultas, además podrás recibir novedades de 3DHUB {% endblock %}
+{% block contenido %} 
+    <br> <br>
+    <form method="POST" enctype="multipart/form-data" novalidate="" style="float: left;">
+        {% csrf_token %}
+            <div class="forms">
+                <div class="cols-xs-3">
+                {{ form.as_p }}
+                </div>
+            </div>
+        <input type="submit" value="ENVIAR" class="btn btn-info"> 
+        <section style="height: 30px;"></section>
+    </form>
+
+    <div style="float: right; margin-right: 60px;">
+        <p style="text-align: center; font-family: 'Montserrat', sans-serif; font-weight: bold; font-size: 18px;">Consíguenos en Instagram como: @3dhub.ar</p>
+
+        <img src="{{ STATIC_URL }}images/3DHUBIG.png" style="width: 500px; border-radius: 20px; border: 2px dashed black">
+    </div>
+{% endblock %} 

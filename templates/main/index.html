@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block contenido %}
+    <body>    
+        <div class="wrapper">
+            <p class="titulos">¡Te ayudamos a plasmar tus ideas en 3D!</p>
+            <img src="{{ STATIC_URL }}images/3d-printing.gif" style="width: 500px;">
+            
+            <div>
+                <br>
+                <p class="titulos2">Somos un emprendimiento de impresiones 3D, ubicados en Temperley, Buenos Aires. <br> Tenemos envíos a todo el país.</p>
+            </div>
+        </div>
+        <section>
+            <br>
+            <div class="container gallery-container">
+
+                <h1>Mirá nuestro catálogo</h1>
+                
+                <div class="tz-gallery">
+            
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <a class="lightbox" href="{{ STATIC_URL }}images/flor.png">
+                                <img src="{{ STATIC_URL }}images/flor.png" alt="Park">
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <a class="lightbox" href="{{ STATIC_URL }}images/homero.jpeg">
+                                <img src="{{ STATIC_URL }}images/homero.jpeg" alt="Sky">
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <a class="lightbox" href="{{ STATIC_URL }}images/queso.png">
+                                <img src="{{ STATIC_URL }}images/queso.png" alt="Tunnel">
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <a class="lightbox" href="{{ STATIC_URL }}images/arbolito.jpeg">
+                                <img src="{{ STATIC_URL }}images/arbolito.jpeg" alt="Rails">
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <a class="lightbox" href="{{ STATIC_URL }}images/elephant.jpeg">
+                                <img src="{{ STATIC_URL }}images/elephant.jpeg" alt="Traffic">
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <a class="lightbox" href="{{ STATIC_URL }}images/holder2.jpeg">
+                                <img src="{{ STATIC_URL }}images/holder2.jpeg" alt="Benches">
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <a class="lightbox" href="{{ STATIC_URL }}images/pikachu.jpeg">
+                                <img src="{{ STATIC_URL }}images/pikachu.jpeg" alt="Rails">
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <a class="lightbox" href="{{ STATIC_URL }}images/oreos.jpeg">
+                                <img src="{{ STATIC_URL }}images/oreos.jpeg" alt="Traffic">
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <a class="lightbox" href="{{ STATIC_URL }}images/amongus.jpeg">
+                                <img src="{{ STATIC_URL }}images/amongus.jpeg" alt="Benches">
+                            </a>
+                        </div>
+                    </div>
+            
+                </div>
+            
+            </div>
+        </section>
+        <br> <br> <br> <br> <br>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
+    {% endblock %}

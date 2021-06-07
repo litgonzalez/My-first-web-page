@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block titulo %} Registro nuevo cliente {% endblock %}
+{% block contenido %}
+<br>    
+<form method="POST" enctype="multipart/form-data" novalidate="">
+        {% csrf_token %}
+            <div class="forms">
+                <div class="cols-xs-3">
+                {{ form.as_p }}
+                </div>
+            </div>
+        <input type="submit" value="REGISTRAR" class="btn btn-success">
+    </form> <br>
+    <a href="/main/nuevaorden"><input type="submit" value="Ya me registré" class="btn btn-warning"></a>
+    <section style="height: 60px;"></section>
+{% endblock %} 

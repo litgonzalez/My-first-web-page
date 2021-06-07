@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block titulo %} Listado de órdenes {% endblock %} 
+{% block contenido %} 
+    <div class="table responsive">
+        <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th>N° de órden</th>
+                        <th>Cliente</th>
+                        <th>Producto/s</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                {% for orden in ordenes %}
+                    <tr>
+                        <td>{{ orden.orden }}</td> 
+                        <td>{{ orden.cliente }}</td>  
+                        <td> 
+                                {% for p in orden.producto.all %}
+                                    <p>{{ p }}</p>
+                                {% endfor %} 
+                        </td> 
+                        <td>
+                            {% for p in orden.producto.all %}
+                                <p>{{ p.precio }} $ </p> 
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endfor %}
+
+        </table>
+    </div>
+    <section style="height: 220px;"></section>
+{% endblock %}

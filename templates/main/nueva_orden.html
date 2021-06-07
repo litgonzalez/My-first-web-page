@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block titulo %} Nueva orden de compra {% endblock %}
+{% block titulo2 %} Para realizar una órden de compra, debes estar previamente registrado en nuestro sistema. <br>
+Si no lo has hecho, <a href="/main/nuevocliente"><strong>hacé clic acá</strong></a> para registrarte {% endblock %}
+{% block contenido %}
+    <form method="POST" enctype="multipart/form-data" novalidate="">
+            {% csrf_token %}
+                <div class="forms">
+                    <div class="cols-xs-3">
+                    {{ form.as_p }}
+                    </div>
+                </div>
+            <input type="submit" value="ENVIAR ORDEN" class="btn btn-info">
+    </form> <br>
+    <a href="/main/ordenes"><input type="submit" value="Ver listado de órdenes" class="btn btn-warning"></a> 
+    <section style="height: 30px;"></section>
+{% endblock %}
